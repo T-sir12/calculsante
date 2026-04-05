@@ -880,11 +880,41 @@ function partager(btn) {
        }, 2000);
      });
    }
-  function showResult(id) {
-  const el = document.getElementById(id);
-  el.classList.add('show');
-  el.style.display = 'block';
-}
+  const suggestions = {
+     'imc-result':  { tab: 'cal',   icon: '🔥', txt: 'Calcule aussi tes besoins caloriques →' },
+     'cal-result':  { tab: 'sleep', icon: '🌙', txt: 'Optimise aussi ton sommeil →' },
+     'sleep-result':{ tab: 'water', icon: '💧', txt: 'Calcule aussi ton hydratation →' },
+     'ex-result':   { tab: 'heart', icon: '❤️', txt: 'Vérifie aussi tes zones cardiaques →' },
+     'w-result':    { tab: 'imc',   icon: '⚖️', txt: 'Calcule aussi ton IMC →' },
+     'hr-result':   { tab: 'ex',    icon: '🏃', txt: 'Calcule aussi ta dépense calorique →' },
+     'wh-result':   { tab: 'age',   icon: '🧬', txt: 'Découvre aussi ton âge métabolique →' },
+     'am-result':   { tab: 'cal',   icon: '🔥', txt: 'Calcule aussi tes besoins caloriques →' },
+   };
+
+   function showResult(id) {
+     const el = document.getElementById(id);
+     el.classList.add('show');
+     el.style.display = 'block';
+
+     // Suggestion
+     const old = el.querySelector('.cross-link');
+     if (old) old.remove();
+     const s = suggestions[id];
+     if (s) {
+       const div = document.createElement('div');
+       div.className = 'cross-link';
+       div.style.cssText = 'margin-top:18px;padding:14px 18px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);cursor:pointer;font-size:14px;transition:all .2s;';
+       div.innerHTML = s.icon + ' <strong>' + s.txt + '</strong>';
+       div.onclick = () => {
+         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+         document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+         document.querySelector('[data-tab="' + s.tab + '"]').classList.add('active');
+         document.getElementById('panel-' + s.tab).classList.add('active');
+         window.scrollTo({ top: document.querySelector('.tab-section').offsetTop - 16, behavior: 'smooth' });
+       };
+       el.appendChild(div);
+     }
+   }
 
 /* ───────────────────────────────────────────────────────
    1. IMC
