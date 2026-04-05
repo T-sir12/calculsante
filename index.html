@@ -186,6 +186,16 @@
     }
     .calc-btn:hover { transform: translateY(-2px); opacity: .9; }
     .calc-btn:active { transform: scale(.98); }
+    .share-btn {
+     display: inline-flex; align-items: center; gap: 8px;
+     margin-top: 12px; padding: 10px 20px;
+     border-radius: 50px; border: 1px solid var(--border);
+     background: rgba(255,255,255,.05); color: var(--muted);
+     font-family: 'Outfit', sans-serif; font-size: 13px;
+     cursor: pointer; transition: all .2s;
+   }
+   .share-btn:hover { border-color: rgba(255,255,255,.2); color: var(--text); }
+   .share-btn.copied { border-color: var(--teal); color: var(--teal); }
     .btn-lime   { background: var(--lime); color: var(--dark); }
     .btn-coral  { background: var(--coral); color: #fff; }
     .btn-violet { background: var(--violet); color: #fff; }
