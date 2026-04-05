@@ -384,6 +384,7 @@
           </div>
         </div>
       </div>
+      <button class="share-btn" onclick="partager(this)">🔗 Partager cet outil</button>
       <button class="calc-btn btn-lime" onclick="calcIMC()">Calculer mon IMC →</button>
       <div class="result-box r-lime" id="imc-result">
         <div class="result-main" id="imc-val">—</div>
@@ -434,6 +435,7 @@
           </div>
         </div>
       </div>
+      <button class="share-btn" onclick="partager(this)">🔗 Partager cet outil</button>
       <button class="calc-btn btn-coral" onclick="calcCalories()">Calculer mes besoins →</button>
       <div class="result-box r-coral" id="cal-result">
         <div class="result-main" id="cal-tdee">—</div>
@@ -483,6 +485,7 @@
           </div>
         </div>
       </div>
+      <button class="share-btn" onclick="partager(this)">🔗 Partager cet outil</button>
       <button class="calc-btn btn-violet" onclick="calcSommeil()">Calculer mes horaires →</button>
       <div class="result-box r-violet" id="sleep-result" style="display:none;">
         <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Horaires suggérés selon le nombre de cycles complets — ⭐ indique l'option idéale.</p>
@@ -548,6 +551,7 @@
           </div>
         </div>
       </div>
+      <button class="share-btn" onclick="partager(this)">🔗 Partager cet outil</button>
       <button class="calc-btn btn-teal" onclick="calcExercice()">Calculer la dépense →</button>
       <div class="result-box r-teal" id="ex-result">
         <div class="result-main" id="ex-kcal">—</div>
@@ -598,6 +602,7 @@
           </select>
         </div>
       </div>
+      <button class="share-btn" onclick="partager(this)">🔗 Partager cet outil</button>
       <button class="calc-btn btn-blue" onclick="calcHydratation()">Calculer mes besoins →</button>
       <div class="result-box r-blue" id="w-result">
         <div class="result-main" id="w-litres">—</div>
@@ -631,6 +636,7 @@
           </div>
         </div>
       </div>
+      <button class="share-btn" onclick="partager(this)">🔗 Partager cet outil</button>
       <button class="calc-btn btn-pink" onclick="calcCoeur()">Calculer mes zones →</button>
       <div class="result-box r-pink" id="hr-result">
         <div class="result-main" id="hr-fcmax">—</div>
@@ -661,6 +667,7 @@
           </div>
         </div>
       </div>
+      <button class="share-btn" onclick="partager(this)">🔗 Partager cet outil</button>
       <button class="calc-btn btn-orange" onclick="calcTailleTour()">Analyser mon tour de taille →</button>
       <div class="result-box r-orange" id="wh-result">
         <div class="result-main" id="wh-rth">—</div>
@@ -708,6 +715,7 @@
           </select>
         </div>
       </div>
+      <button class="share-btn" onclick="partager(this)">🔗 Partager cet outil</button>
       <button class="calc-btn btn-mint" onclick="calcAgeMeta()">Calculer mon âge métabolique →</button>
       <div class="result-box r-mint" id="am-result">
         <div class="result-main" id="am-age-meta">—</div>
@@ -862,7 +870,17 @@ document.getElementById('sleep-mode').querySelectorAll('.radio-btn').forEach(btn
 /* ───────────────────────────────────────────────────────
    SHOW RESULT HELPER
 ─────────────────────────────────────────────────────── */
-function showResult(id) {
+function partager(btn) {
+     navigator.clipboard.writeText(window.location.href).then(() => {
+       btn.textContent = '✅ Lien copié !';
+       btn.classList.add('copied');
+       setTimeout(() => {
+         btn.textContent = '🔗 Partager cet outil';
+         btn.classList.remove('copied');
+       }, 2000);
+     });
+   }
+  function showResult(id) {
   const el = document.getElementById(id);
   el.classList.add('show');
   el.style.display = 'block';
