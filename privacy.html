@@ -8,15 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root { --dark:#0E1117; --card:#161B27; --border:rgba(255,255,255,0.08); --text:#F0F4FF; --muted:#8A95AA; --teal:#00C9B1; }
-    * { box-sizing:border-box; margin:0; padding:0; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:'Outfit',sans-serif; background:var(--dark); color:var(--text); padding:40px 20px; }
     .container { max-width:760px; margin:0 auto; }
     .logo { font-family:'Syne',sans-serif; font-size:24px; font-weight:800; color:var(--teal); margin-bottom:32px; display:block; text-decoration:none; }
     h1 { font-family:'Syne',sans-serif; font-size:28px; margin-bottom:8px; }
     .date { color:var(--muted); font-size:14px; margin-bottom:36px; }
-    h2 { font-family:'Syne',sans-serif; font-size:18px; margin:28px 0 10px; }
+    h2 { font-family:'Syne',sans-serif; font-size:18px; margin:28px 0 10px; color:var(--teal); }
     p { color:#C8D0E0; line-height:1.8; font-size:15px; margin-bottom:12px; }
     a { color:var(--teal); }
+    .highlight { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px 20px; margin:16px 0; }
     .back { display:inline-block; margin-top:40px; color:var(--teal); text-decoration:none; font-weight:600; }
   </style>
 </head>
@@ -27,24 +28,30 @@
     <p class="date">Dernière mise à jour : janvier 2026</p>
 
     <h2>1. Collecte de données</h2>
-    <p>calculsante.ca ne collecte, ne stocke et ne transmet aucune donnée personnelle. Tous les calculs sont effectués directement dans votre navigateur (côté client). Nous n'avons accès à aucune information que vous entrez dans nos outils.</p>
+    <p>calculsante.ca ne collecte, ne stocke et ne transmet aucune donnée personnelle. Tous les calculs sont effectués directement dans votre navigateur (côté client). Nous n'avons accès à aucune information que vous entrez dans nos outils de santé.</p>
 
-    <h2>2. Cookies et publicité</h2>
-    <p>Ce site utilise Google AdSense pour afficher des publicités. Google peut utiliser des cookies pour personnaliser les annonces selon vos habitudes de navigation. Pour en savoir plus ou vous désinscrire, consultez la <a href="https://policies.google.com/privacy" target="_blank">politique de confidentialité de Google</a>.</p>
+    <h2>2. Conformité à la Loi 25 (Québec)</h2>
+    <div class="highlight">
+      <p>Conformément à la <strong>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (Loi 25)</strong> du Québec, nous nous engageons à :</p>
+      <p>• Ne collecter aucun renseignement personnel sans consentement explicite</p>
+      <p>• Informer clairement les utilisateurs de toute collecte de données</p>
+      <p>• Permettre à tout utilisateur d'accéder à ses données ou d'en demander la suppression</p>
+      <p>• Signaler tout incident de confidentialité dans les délais prescrits</p>
+    </div>
+    <p>Puisque calculsante.ca n'effectue aucune collecte de données personnelles, les risques liés à la Loi 25 sont minimaux. Le formulaire de contact collecte uniquement le nom, le courriel et le message, utilisés exclusivement pour répondre à votre demande.</p>
 
-    <h2>3. Google Analytics</h2>
-    <p>Nous pouvons utiliser Google Analytics pour mesurer le trafic de façon anonyme (pages visitées, durée des sessions). Aucune donnée personnelle identifiable n'est collectée.</p>
+    <h2>3. Cookies et publicité (Google AdSense)</h2>
+    <p>Ce site utilise <strong>Google AdSense</strong> pour afficher des publicités. Google peut utiliser des cookies pour personnaliser les annonces selon vos habitudes de navigation et votre historique sur d'autres sites.</p>
+    <p>Vous pouvez consulter et gérer vos préférences publicitaires via :</p>
+    <p>• <a href="https://adssettings.google.com" target="_blank">Paramètres des annonces Google</a></p>
+    <p>• <a href="https://policies.google.com/privacy" target="_blank">Politique de confidentialité de Google</a></p>
+    <p>• <a href="https://optout.aboutads.info" target="_blank">Désinscription publicitaire (aboutads.info)</a></p>
 
-    <h2>4. Liens externes</h2>
-    <p>Notre site peut contenir des liens vers des sites tiers. Nous ne sommes pas responsables de leurs pratiques en matière de confidentialité.</p>
+    <h2>4. Formulaire de contact</h2>
+    <p>Notre formulaire de contact est géré par <strong>Formspree</strong>. Les données soumises (nom, courriel, message) sont transmises de façon sécurisée et utilisées uniquement pour répondre à votre demande. Elles ne sont jamais vendues ni partagées avec des tiers. Consultez la <a href="https://formspree.io/legal/privacy-policy" target="_blank">politique de Formspree</a> pour plus de détails.</p>
 
-    <h2>5. Modifications</h2>
-    <p>Nous nous réservons le droit de modifier cette politique à tout moment. Les changements seront publiés sur cette page.</p>
+    <h2>5. Google Analytics</h2>
+    <p>Nous pouvons utiliser Google Analytics pour mesurer le trafic de façon anonyme (pages visitées, durée des sessions, provenance géographique). Aucune donnée personnelle identifiable n'est collectée via cet outil.</p>
 
-    <h2>6. Contact</h2>
-    <p>Pour toute question : <a href="mailto:contact@calculsante.ca">contact@calculsante.ca</a></p>
-
-    <a class="back" href="/">← Retour aux calculateurs</a>
-  </div>
-</body>
-</html>
+    <h2>6. Liens externes</h2>
+    <p>Notre site peut contenir des liens vers des sites tiers. Nous ne sommes pas responsables de leurs pratiques en matière de confidentialité. Nous v
